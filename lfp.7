@@ -1,0 +1,150 @@
+.TH "IPRO\ lfp\ Files\ Quick\ Ref" "7" "Teris\ Documentation" "Noah\ Birnel"
+
+Numbers appended to fields are maximum field lengths.
+
+.SH IM,Key.70,Boundary,Offset,@Vol.30;Path;File.80;Type,Rotate
+Add image.
+.B Boundary
+can be any single letter,
+(up to eight different ones)
+as set up in the project.
+Commonly:
+.br
+\fB\(bu\fP
+.B S
+= Source
+.br
+\fB\(bu\fP
+.B B
+= Box
+.br
+\fB\(bu\fP
+.B F
+= Folder
+.br
+\fB\(bu\fP
+.B D
+= Document
+.br
+\fB\(bu\fP
+.B C
+= Child
+.br
+\fB\(bu\fP
+.B Space or empty
+= No boundary.
+.br
+.B Offset
+is 
+.B 0 
+for single page formats, 1\(enbased for pdfs. Multipage tifs \(em ?
+.br
+Path to Volume plus path to file cannot exceed 197 characters.
+Path to Volume plus path to file plus filename cannot exceed 217 characters.
+.br
+.B Type
+is
+.br
+\fB\(bu\fP
+.B 2
+= Single or multiple page TIFF (.TIF)
+.br
+\fB\(bu\fP
+.B 4
+= Color Image .JPG, .BMP, .PNG, .PCX
+.br
+\fB\(bu\fP
+.B 7
+= .PDF
+.br
+.B Older formats
+.br
+\fB\(bu\fP
+.B 1
+= IPRO Tech image (.IMG)
+.br
+\fB\(bu\fP
+.B 3
+= IPRO Tech stacked TIFF (.STF)
+.br
+\fB\(bu\fP
+.B 5
+= Early version black and white PDF
+.br
+\fB\(bu\fP
+.B 6
+= Early version Color PDF
+.br
+\fB\(bu\fP
+.B 99
+= Placeholder
+.br
+.B Rotate
+0=0, 1=90, 2=180, 3=270
+.SH BF,Key.70,Boundary
+set boundary flag.
+.SH BM,Key.70,Boundary
+set higher boundary flag.
+.SH BR,Begin_Key.70,End_Key.70,Boundary
+group a range into a boundary.
+.SH LC,Key.70,(Level_Code;Level_Code;...).40
+apply physical level codes.
+.SH IO,Key.70,Field_Number,Information.80
+apply info only fields.
+Leave information blank to strip out IO field.
+.SH IA,Key.70,Field_Number,Information.80
+append to info only fields with ; delimiter.
+.SH FD,Key.70,Boundary,Folder_Description
+apply folder description.
+.SH IN,Issue.40
+make a new issue tag
+.SH IS,Key.70,Issue.40
+apply issue tag to page.
+.SH FT,Key.70,Xpix,Ypix,[Confidence:]word|Xpos|Ypos|Xsize|Ysize[^more terms]
+provide search terms with their position on page.
+.SH OT,Key.70,Full\\\\Path\\\\to\\\\text.file
+provide full path up to and including text for image.
+.SH OF,Key.70,Full\\\\Path\\\\to\\\\original.file,Page_in_File
+provide full path up to and including original file.
+.SH OI,Key.70,full text
+Provide full ocr for image.
+.SH DT,Key.70
+remove all tags from page.
+.SH RT,Key.70,Issue.40
+remove specified tag from page.
+.SH VF,Imagefile,[Volume.30],[Sub_Dir],Type
+move an image file to another volume.
+.SH VN,Volume.30,Direct_Access_Path,Access_Type
+Update the path to volume.
+.B Access_Type
+can be:
+.br
+\fB\(bu\fP
+.B 0
+= Direct Access
+.br
+\fB\(bu\fP
+.B 10
+= Local CD-ROM
+.br
+\fB\(bu\fP
+.B 99
+= Alternate Volume Path
+.br
+.SH FN,Key.70,File,Offset
+change an image\'s filename.
+.SH CK,Old_Key.70,New_Key.70
+change an image\'s key while keeping other annotations.
+.SH DA,Key.70,YYYYMMDD
+change an image\'s date.
+.SH RP,Key.70
+remove a page.
+.SH RR,Start_Key.70,End_Key.70
+remove a range of pages.
+.SH SR,Key.70
+restrict viewing of a page.
+.SH RS,Key.70
+remove viewing restrictions on a page.
+.SH ##,Comment
+add comment.
+
